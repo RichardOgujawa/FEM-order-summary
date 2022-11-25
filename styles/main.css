@@ -83,7 +83,7 @@ h1, h2, h3 {
     /**Colors**/
     --clr-primary-100:225 100% 94%;
 
-    --clr-accent-300: 255 65% 60%;
+    --clr-accent-300: 250 65% 60%;
     --clr-accent-400: 255 65% 47%;
     --clr-accent-900: 255 65% 27%;
 
@@ -180,7 +180,13 @@ a:is(:hover, :focus){
 body {
     min-height: 100vh;
 
-    background-image: linear-gradient(to top, hsl(var(--clr-accent-400)), hsl(var(--clr-accent-900)) 17%, hsl(var(--clr-accent-400)));
+    background-image: linear-gradient(
+        to top, 
+        hsl(var(--clr-accent-300)), 
+        hsl(var(--clr-accent-400)), 
+        hsl(var(--clr-accent-900)) 17%, 
+        hsl(var(--clr-accent-400)), 
+        hsl(var(--clr-accent-300)));
 }
 
 main {
