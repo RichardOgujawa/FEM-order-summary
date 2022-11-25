@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Order summary card</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/d908522f87.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+  <main class="grid-group">
+    <article class="order grid-group">
+      <picture class="order__picture">
+        <source
+          srcset="
+          https://images.pexels.com/photos/3756766/pexels-photo-3756766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 1061w, 
+          https://images.pexels.com/photos/3756766/pexels-photo-3756766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 530w"
+          sizes="
+          (max-width: 400px) 250px,
+          350px">
+
+        <img class="order__img"
+          src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Man putting tape on packaging box">
+      </picture>
+
+      <div class="order__content grid-group">
+
+        <h1 class="order__title">Order Summary</h1>
+
+        <p class="order__details">
+          You can now listen to millions of songs, audiobooks, and podcasts on any
+          device anywhere you like!
+        </p>
+
+        <section class="order__change-plan-section grid-group">
+          <div class="order__music-icon">
+            <i class="fa-solid fa-music"></i>
+          </div>
+
+          <div class="order__plan">Annual Plan</div>
+
+          <div class="order__price">$59.99/year</div>
+
+          <div class="order__link">
+            <a href="#">Change</a>
+          </div>
+        </section>
+
+        <section class="order__btn-container grid-group">
+          <button class="order__btn button primary">Proceed to Payment</button>
+          <button class="order__btn button secondary">Cancel Order</button>
+        </section>
+      </div>
+    </article>
+  </main>
+
+</body>
+
+</html>

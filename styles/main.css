@@ -1,0 +1,258 @@
+/*CSS RESET
+-------------------------------------------*/
+/*Author: Josh W Comeau https://www.joshwcomeau.com/css/custom-css-reset/*/
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+    height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1, h2, h3 {
+    line-height: 1.1;
+}
+
+/*VARIABLES
+-------------------------------------------*/
+
+:root {
+
+    /**Colors**/
+    --clr-primary-100:225 100% 94%;
+
+    --clr-accent-300: 255 65% 60%;
+    --clr-accent-400: 255 65% 47%;
+    --clr-accent-900: 255 65% 27%;
+
+    --clr-neutral-100: 225 100% 98%;
+    --clr-neutral-400: 225 23% 55%;
+
+    /**Typography**/
+    --fs-body: 1rem;
+    --fs-heading: 1.5rem;
+
+    --ff-base: 'Red Hat Display', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-bolder: 900;
+    /** NOT USED:--ff-accent:  **/
+
+    font-size: 13px;
+    font-family: var(--ff-base); 
+    font-weight: var(--fw-regular);
+}
+
+/*UTILITY CLASSES
+-------------------------------------------*/
+
+/**Layout**/
+.grid-group {
+    display: grid;
+    gap: var(--gap);
+}
+.flex-group {
+    display: flex;
+    gap: var(--gap);
+    flex-wrap: wrap;
+}
+
+/**Buttons**/
+.button {
+    padding: 0.7em; 
+    border: none; 
+    border-radius: 0.3em;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.primary {
+    background-color: hsl(var(--clr-accent-400));
+    color: hsl(var(--clr-neutral-100));
+    filter: drop-shadow(0 0.7em 1em hsl(var(--clr-accent-400)/ 30%))
+}
+.primary:is(:hover, :focus) {
+    background: hsl(var(--clr-accent-300));
+}
+
+.secondary {
+    background-color: transparent;
+    color: hsl(var(--clr-accent-900));
+}
+.secondary:is(:hover, :focus) {
+    background: hsl(var(--clr-accent-300));
+}
+
+/*GLOBAL STYLINGS
+-------------------------------------------*/
+
+h1, 
+p {
+    text-align: center;
+}
+h1 {
+    font-size: var(--fs-heading);
+}
+p {
+    color: hsl(var(--clr-neutral-400));
+    width: 30ch;
+    margin-inline: auto;
+}
+
+
+a {
+    color: hsl(var(--clr-accent-400));
+    text-decoration: underline;
+}
+a:is(:hover, :focus){
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/*CUSTOM STYLINGS
+-------------------------------------------*/
+
+body {
+    min-height: 100vh;
+
+    background-image: linear-gradient(to top, hsl(var(--clr-accent-400)), hsl(var(--clr-accent-900)) 17%, hsl(var(--clr-accent-400)));
+}
+
+main {
+    width: 100%; 
+    height: 100%; 
+
+    place-content: center;
+}
+
+/*ORDER COMPONENT
+-------------------------------------------*/
+.order {
+    --gap: 1.4em;
+    border-radius: 0.5em;
+    overflow: hidden;
+
+    background: hsl(var(--clr-neutral-100));
+}
+
+
+.order__picture {
+    max-height: 250px;
+    overflow: hidden;
+}
+.order__img {
+    width: 100%; 
+}
+
+
+.order__content {
+    padding: 1.5em;
+}
+.order__change-plan-section {
+    --gap: 0em;
+    padding-block: 1em;
+    border-radius: 0.5em;
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "music-icon plan changes" 
+    "music-icon price changes";
+
+    background: hsl(var(--clr-primary-100));
+}
+
+.order__music-icon, 
+.order__link{
+    place-self: center;
+}
+.order__music-icon {
+    grid-area: music-icon;
+}
+.order__music-icon > i{
+    padding: 1em;
+    border-radius: 100vw;
+
+    background: hsl(var(--clr-accent-400)/10%);
+}
+.order__plan {
+    grid-area: plan;
+    font-weight: var(--fw-bold);
+}
+.order__price {
+    grid-area: price;
+    color: hsl(var(--clr-neutral-400));
+}
+.order__link {
+    grid-area: changes;
+}
+
+
+.order__btn-container {
+    --gap: 0.5em;
+}
